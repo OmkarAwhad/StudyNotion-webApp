@@ -1,278 +1,168 @@
 import React from "react";
 import { FooterLink2 } from "../../data/footer-links";
 import { Link } from "react-router-dom";
-import SendIcon from "@mui/icons-material/Send";
+
+// Images
 import Logo from "../../assets/Logo/Logo-Full-Light.png";
-import {
-	FaFacebook,
-	FaGoogle,
-	FaYoutube,
-	FaXTwitter,
-	FaLinkedin,
-	FaInstagram,
-} from "react-icons/fa6";
-import "../../App.css";
+
+// Icons
+import { FaFacebook, FaGoogle, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const BottomFooter = ["Privacy Policy", "Cookie Policy", "Terms"];
-const Resources = [
-	"Articles",
-	"Blog",
-	"Chart Sheet",
-	"Code challenges",
-	"Docs",
-	"Projects",
-	"Videos",
-	"Workspaces",
-];
+const Resources = ["Articles", "Blog", "Chart Sheet", "Code challenges", "Docs", "Projects", "Videos", "Workspaces"];
 const Plans = ["Paid memberships", "For students", "Business solutions"];
-const Community = [
-	{ name: "Forums", link: "forums" },
-	{ name: "Chapters", link: "chapters" },
-	{ name: "Events", link: "events" },
-	{
-		name: "Contribute",
-		link: "https://github.com/OmkarAwhad/StudyNotion-webApp",
-		external: true,
-	},
-];
+const Community = ["Forums", "Chapters", "Events"];
+const Company = ["About", "Careers", "Affiliates"];
 
 const Footer = () => {
-	return (
-		<div className="bg-richblack-800">
-			<div className="flex flex-col lg:flex-row gap-8 items-center justify-between w-11/12 max-w-maxContent text-richblack-400 leading-6 mx-auto py-14">
-				<div className="w-full flex flex-col lg:flex-row pb-5 border-b border-richblack-700">
-					<div className="w-full lg:w-[50%] flex flex-wrap lg:flex-row justify-between lg:border-r lg:border-richblack-700 pl-3 lg:pr-5 gap-3">
-						<div className="w-full lg:w-[30%] mb-7 lg:pl-0">
-							<img
-								src={Logo}
-								alt=""
-								className="object-contain"
-							/>
-							<h1 className="text-richblack-50 font-semibold text-[16px] mt-4">
-								Company
-							</h1>
-							<div className="flex flex-col gap-2 mt-2">
-								{["About", "Careers", "Affiliates"].map(
-									(ele, i) => (
-										<div
-											key={i}
-											className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
-										>
-											<Link
-												to={`/${ele.toLowerCase()}`}
-											>
-												{ele}
-											</Link>
-										</div>
-									)
-								)}
-							</div>
-							<div className="flex gap-3 mt-4 text-lg">
-								{[
-									{
-										icon: <FaFacebook />,
-										link: "https://www.facebook.com",
-									},
-									{
-										icon: <FaGoogle />,
-										link: "https://projects.100xdevs.com",
-									},
-									{
-										icon: <FaXTwitter />,
-										link: "https://www.twitter.com",
-									},
-									{
-										icon: <FaYoutube />,
-										link: "https://www.youtube.com",
-									},
-									{
-										icon: <FaLinkedin />,
-										link: "https://www.linkedin.com",
-									},
-									{
-										icon: <FaInstagram />,
-										link: "https://www.instagram.com",
-									},
-								].map(({ icon, link }, i) => (
-									<a
-										key={i}
-										href={link}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="social-icon transition duration-300 hover:opacity-75 hover:bg-white"
-									>
-										{icon}
-									</a>
-								))}
-							</div>
-							<div className="container mt-4">
-								<h4
-									className="text-richblack-50"
-									style={{ marginBottom: "0.1rem" }}
-								>
-									Email Us
-								</h4>
-								<div className="flex items-center">
-									<input
-										type="text"
-										id="message-input"
-										placeholder="Type your message here"
-										className="border-2 border-yellow-500 rounded px-2 py-1 w-40"
-									/>
-									<a
-										href="mailto:abc@gmail.com"
-										className="flex items-center ml-2"
-									>
-										<SendIcon
-											className="text-yellow-500"
-											style={{
-												fontSize: "26px",
-												cursor: "pointer",
-											}}
-										/>
-									</a>
-								</div>
-							</div>
-						</div>
+   return (
+      <div className=" bg-richblack-800">
+         <div className="flex flex-row w-[80%] mx-auto py-10 lg:border-b lg:border-richblack-300 ">
 
-						<div className="w-full lg:w-[30%] mb-7 lg:pl-0">
-							<h1 className="text-richblack-50 font-semibold text-[16px]">
-								Resources
-							</h1>
-							<div className="flex flex-col gap-2 mt-2">
-								{Resources.map((ele, index) => (
-									<div
-										key={index}
-										className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
-									>
-										<Link
-											to={`/${ele
-												.split(" ")
-												.join("-")
-												.toLowerCase()}`}
-										>
-											{ele}
-										</Link>
-									</div>
-								))}
-							</div>
-							<h1 className="text-richblack-50 font-semibold text-[16px] mt-7">
-								Support
-							</h1>
-							<div className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200 mt-2">
-								<Link to="/help-center">
-									Help Center
-								</Link>
-							</div>
-						</div>
+            {/* Section 1 */}
+            <div className="flex gap-12 lg:border-r pr-20 py-12 lg:border-richblack-700">
 
-						<div className="w-full lg:w-[30%] mb-7 lg:pl-0">
-							<h1 className="text-richblack-50 font-semibold text-[16px]">
-								Plans
-							</h1>
-							<div className="flex flex-col gap-2 mt-2">
-								{Plans.map((ele, index) => (
-									<div
-										key={index}
-										className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
-									>
-										<Link
-											to={`/${ele
-												.split(" ")
-												.join("-")
-												.toLowerCase()}`}
-										>
-											{ele}
-										</Link>
-									</div>
-								))}
-							</div>
-							<h1 className="text-richblack-50 font-semibold text-[16px] mt-7">
-								Community
-							</h1>
-							<div className="flex flex-col gap-2 mt-2">
-								{Community.map((ele, index) => (
-									<div
-										key={index}
-										className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
-									>
-										{ele.external ? (
-											<a
-												href={ele.link}
-												target="_blank"
-												rel="noopener noreferrer"
-											>
-												{ele.name}
-											</a>
-										) : (
-											<Link to={ele.link}>
-												{ele.name}
-											</Link>
-										)}
-									</div>
-								))}
-							</div>
-						</div>
-					</div>
+               {/* Box 1 */}
+               <div className="flex flex-col w-[30%] lg:w-[30%] mb-7 lg:pl-0 gap-3">
+                  <Link to={'/'}>
+                     <img src={Logo} />
+                  </Link>
 
-					<div className="w-full lg:w-[50%] flex flex-wrap flex-row justify-between pl-3 lg:pl-5 gap-3">
-						{FooterLink2.map((ele, i) => (
-							<div
-								key={i}
-								className="w-full lg:w-[30%] mb-7 lg:pl-0"
-							>
-								<h1 className="text-richblack-50 font-semibold text-[16px]">
-									{ele.title}
-								</h1>
-								<div className="flex flex-col gap-2 mt-2">
-									{ele.links.map((link, index) => (
-										<div
-											key={index}
-											className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
-										>
-											<Link to={link.link}>
-												{link.title}
-											</Link>
-										</div>
-									))}
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-			</div>
+                  <div>
+                     <h1 className=" text-richblack-200 text-xl font-semibold mb-3 ">Company</h1>
+                     {
+                        Company.map((item, index) => {
+                           return (
+                              <div key={index} className=" text-richblack-200 py-1" >
+                                 <Link to={item.toLowerCase()}>{item}</Link>
+                              </div>
+                           )
+                        })
+                     }
+                  </div>
 
-			<div className="flex flex-col lg:flex-row items-center justify-between w-11/12 max-w-maxContent text-richblack-400 mx-auto pb-14 text-sm">
-				<div className="flex justify-between lg:items-start items-center flex-col lg:flex-row gap-3 w-full">
-					<div className="flex flex-row flex-wrap">
-						{BottomFooter.map((ele, i) => (
-							<div
-								key={i}
-								className={`${
-									BottomFooter.length - 1 === i
-										? ""
-										: "border-r border-richblack-700 cursor-pointer hover:text-richblack-50 transition-all duration-200"
-								} px-3`}
-							>
-								<Link
-									to={`/${ele
-										.split(" ")
-										.join("-")
-										.toLocaleLowerCase()}`}
-								>
-									{ele}
-								</Link>
-							</div>
-						))}
-					</div>
-					<div className="text-center mt-4 lg:mt-0">
-						Made with ❤️ © {new Date().getFullYear()}{" "}
-						Studynotion
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+                  <div className="flex gap-3 text-2xl text-richblack-200 ">
+                     <FaFacebook />
+                     <FaGoogle />
+                     <FaTwitter />
+                     <FaYoutube />
+                  </div>
+
+               </div>
+
+               {/* Box 2 */}
+               <div className="flex flex-col gap-7">
+                  <div>
+                     <h1 className=" text-richblack-200 text-xl font-semibold mb-3 ">Resources</h1>
+                     <div>
+                        {
+                           Resources.map((item, index) => {
+                              return (
+                                 <div key={index} className=" text-richblack-200 py-1">
+                                    <Link to={item.split(" ").join("-").toLowerCase()} >{item}</Link>
+                                 </div>
+                              )
+                           })
+                        }
+                     </div>
+                  </div>
+
+                  <div>
+                     <h1 className=" text-richblack-200 text-xl font-semibold mb-3">Support</h1>
+                     <div className=" text-richblack-200 py-1"><Link to={'/help-center'}>Help Center</Link></div>
+                  </div>
+               </div>
+
+               {/* Box 3 */}
+               <div className="flex flex-col gap-7">
+                  <div>
+                     <h1 className=" text-richblack-200 text-xl font-semibold mb-3 ">Plans</h1>
+                     <div>
+                        {
+                           Plans.map((item, index) => {
+                              return (
+                                 <div className=" text-richblack-200 py-1">
+                                    <Link to={item.split(" ").join("-").toLowerCase()}>
+                                       {item}
+                                    </Link>
+                                 </div>
+                              )
+                           })
+                        }
+                     </div>
+                  </div>
+
+                  <div>
+                     <h1 className=" text-richblack-200 text-xl font-semibold mb-3 ">Community</h1>
+                     <div>
+                        {
+                           Community.map((item, index) => {
+                              return (
+                                 <div className=" text-richblack-200 py-1">
+                                    <Link to={item.split(" ").join("-").toLowerCase()}>
+                                       {item}
+                                    </Link>
+                                 </div>
+                              )
+                           })
+                        }
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+
+
+            {/* Section 2 */}
+            <div className="pl-16 pt-12">
+
+               <div className="flex lg:flex-row gap-12">
+                  {
+                     FooterLink2.map((item, index) => {
+                        return (
+                           <div key={index} className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
+                              <h1 className=" text-richblack-200 text-xl font-semibold mb-3 ">{item.title}</h1>
+                              <div className=" text-richblack-200 py-1 flex flex-col gap-2">
+                                 {
+                                    item.links.map((elm, i) => {
+                                       return (
+                                          <div key={i}>
+                                             <Link to={elm.link} >{elm.title}</Link>
+                                          </div>
+                                       )
+                                    })
+                                 }
+                              </div>
+                           </div>
+                        )
+                     })
+                  }
+               </div>
+
+            </div>
+
+         </div>
+
+         <div className="flex lg:flex-row justify-between text-richblack-200 w-[80%] mx-auto py-8">
+
+            <div className="flex lg:flex-row py-1 ">
+               {
+                  BottomFooter.map((item, index) => {
+                     return (
+                        <div key={index} className=" lg:border-r lg:border-richblack-50 px-3 " >
+                           <Link to={item.split(" ").join("-").toLowerCase()} >{item}</Link>
+                        </div>
+                     )
+                  })
+               }
+            </div>
+
+            <div className="text-center">Made with ❤️ CodeHelp © 2023 Studynotion</div>
+
+         </div>
+
+      </div>
+   );
 };
 
 export default Footer;

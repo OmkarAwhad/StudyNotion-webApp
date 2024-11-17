@@ -7,6 +7,10 @@ import CTAButton from "../components/core/HomePage/CTAButton";
 import Banner from "../assets/Images/banner.mp4";
 import CodeBlocks from "../components/core/HomePage/CodeBlocks";
 import Footer from "../components/common/Footer";
+import TimeLineSection from "../components/core/HomePage/TimeLineSection";
+import LearningLanguageSection from "../components/core/HomePage/LearningLanguageSection";
+import InstructorSection from "../components/core/HomePage/InstructorSection";
+import ExploreMore from "../components/core/HomePage/ExploreMore";
 
 const Home = () => {
 	return (
@@ -107,9 +111,72 @@ const Home = () => {
 						backgroundGradient={<div className="codeblock2 absolute"></div>}
 					/>
 				</div>
+
+				<ExploreMore/>
 			</div>
+
 			{/* Section 2 */}
+			<div className=" bg-pure-greys-5 text-richblack-700 ">
+
+				<div className="homepage_bg h-[333px] ">
+
+					<div className=" w-11/12 max-w-maxContent flex flex-col justify-between items-center gap-5 mx-auto ">
+
+						<div className=" h-[140px] "></div>
+						{/* two btns */}
+						<div className="flex flex-row gap-7 text-white">
+							<CTAButton active={true} linkto={"/signUp"} >
+								<div className="flex flex-row gap-3 items-center">
+									Explore Full Catalog
+									<FaArrowRight />
+								</div>
+							</CTAButton>
+
+							<CTAButton active={false} linkto={"/signUp"} >
+								Learn More
+							</CTAButton>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div className="w-11/12 flex max-w-maxContent items-center justify-between gap-16 mx-auto py-16 ">
+					
+					<div className=" flex flex-row gap-5 ">
+						<div className=" text-4xl font-semibold w-[45%] ">
+							Get the skills you need for a
+							<HighlightText text={" Job that is in demand"} />
+						</div>
+
+						<div className=" flex flex-col gap-4 w-[40%] ml-10 items-start ">
+							<p>The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.</p>
+							<CTAButton active={true} linkto={'/signUp'} >
+								<div className="w-fit ">
+									Learn More
+								</div>
+							</CTAButton>
+						</div>
+					</div>
+
+				</div>
+
+				<TimeLineSection/>
+
+				<LearningLanguageSection/>
+
+			</div>
+
 			{/* Section 3 */}
+			<div className="w-11/12 mx-auto flex flex-col items-center justify-end text-white max-w-maxContent ">
+				<InstructorSection/>
+
+				<div className="flex flex-col items-center justify-center text-center gap-10 mt-20 mb-10">
+					<h1 className="text-4xl font-semibold">Reviews from other learners</h1>
+				</div>
+
+			</div>
+
 			{/* Footer */}
 			<Footer/>
 		</div>
