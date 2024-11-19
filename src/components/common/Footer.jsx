@@ -81,7 +81,7 @@ const Footer = () => {
                         {
                            Plans.map((item, index) => {
                               return (
-                                 <div className=" text-richblack-200 py-1">
+                                 <div key={index} className=" text-richblack-200 py-1">
                                     <Link to={item.split(" ").join("-").toLowerCase()}>
                                        {item}
                                     </Link>
@@ -98,7 +98,7 @@ const Footer = () => {
                         {
                            Community.map((item, index) => {
                               return (
-                                 <div className=" text-richblack-200 py-1">
+                                 <div key={index} className=" text-richblack-200 py-1">
                                     <Link to={item.split(" ").join("-").toLowerCase()}>
                                        {item}
                                     </Link>

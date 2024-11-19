@@ -38,7 +38,7 @@ function TimeLineSection() {
             {
                timeLine.map((item, index) => {
                   return (
-                     <div className='flex gap-5'>
+                     <div key={index} className='flex gap-5'>
                         <div className='flex items-center justify-center bg-white rounded-full h-[50px] w-[50px] '>
                            <img src={item.logo} alt="Logos" />
                         </div>
