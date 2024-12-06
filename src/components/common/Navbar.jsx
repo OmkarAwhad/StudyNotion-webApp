@@ -40,7 +40,7 @@ function Navbar() {
    }
 
    return (
-      <div className="flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700 ">
+      <div className="flex h-14 items-center justify-center z-20 border-b-[1px] border-b-richblack-700 ">
          <div className="w-11/12 flex max-w-maxContent items-center justify-between gap-2 text-richblack-100 text-base ">
             <div>
                <Link to={"/"}>
@@ -66,9 +66,9 @@ function Navbar() {
                                  <div className="absolute top-4 invisible opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:visible transition-all duration-200 ">
 
                                     <div className="relative">
-                                       <div className=" h-[30px] w-[30px] bg-richblack-300 top-3 left-5 absolute rounded rotate-45 "></div>
+                                       <div className=" h-[30px] w-[30px] bg-richblack-200 top-3 left-5 absolute rounded rotate-45 "></div>
 
-                                       <div className="absolute max-h-fit w-[150px] translate-x-[-25%] -bottom-40 bg-richblack-300 text-richblack-900 font-medium text-center text-lg flex flex-col rounded-md ">
+                                       <div className="absolute max-h-fit w-[150px] translate-x-[-25%] -bottom-40 bg-richblack-200 text-richblack-900 font-medium text-center text-lg flex flex-col rounded-md ">
                                           {
                                              subLinks.length && (
                                                 subLinks.map((item, index) => (
